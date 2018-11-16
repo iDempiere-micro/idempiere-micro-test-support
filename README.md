@@ -1,2 +1,1 @@
 # idempiere-micro-test-support
-
