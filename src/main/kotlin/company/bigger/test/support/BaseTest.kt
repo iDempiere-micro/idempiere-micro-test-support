@@ -26,8 +26,4 @@ open class BaseTest {
             setUpIsDone = true
         }
     }
-
-    @Test
-    fun test() {
-    }
 }
