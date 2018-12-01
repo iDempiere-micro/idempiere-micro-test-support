@@ -5,6 +5,8 @@ import kotliquery.HikariCP
 import org.junit.Before
 import org.junit.Test
 import org.junit.runners.JUnit4
+import kotlin.test.assertEquals
+import kotlin.test.assertNotNull
 
 /**
  * Base Unit test running without the web environment
@@ -13,9 +15,10 @@ import org.junit.runners.JUnit4
 open class BaseTest {
     companion object {
         private var setUpIsDone = false
-        private const val localhost = "jdbc:postgresql://localhost:5432/idempiere"
+        private val localhost = System.getenv("SESSION_URL") ?: "jdbc:postgresql://localhost:5433/idempiere"
         private const val user = "adempiere"
     }
+
     /**
      * At the beginning of the tests setup the Hikari Connection Pool to connect to the Ini-provided PgSQL
      */
