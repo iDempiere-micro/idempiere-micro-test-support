@@ -12,11 +12,3 @@ fun randomString(length: Int): String {
                     .joinToString("")
     return ('a'..'z').randomString(length)
 }
-
-/**
- * Load a test resource
- */
-fun String.asResource(work: (String) -> Unit) {
-    val content = BaseTest::class.java.getResource(this).readText()
-    work(content)
-}
